@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Link;
 use App\Models\Topic;
+use App\Observers\LinkObserver;
 use App\Observers\TopicObserver;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,5 +35,6 @@ class AppServiceProvider extends ServiceProvider
 
         //
         Topic::observe(TopicObserver::class);
+        Link::observe(LinkObserver::class);
     }
 }
